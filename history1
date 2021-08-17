@@ -1,0 +1,683 @@
+    1  useradd tmargaryan
+    2  passwd tmargaryan
+    3  vi /etc/group
+    4  vi /etc/passwd
+    5  visudo
+    6  vi /etc/ssh/sshd_config 
+    7  vi /etc/sysconfig/selinux 
+    8  vi /etc/sysconfig/network-scripts/ifcfg-
+    9  vi /etc/sysconfig/network-scripts/ifcfg-ens192 
+   10  reboot
+   11  ifconfig 
+   12  ping ya.ru
+   13  yum -y update
+   14  vi /etc/redhat-release 
+   15  cat .bash_history 
+   16  cat .bash_profile
+   17  cat .bash_logout
+   18  cat .bashrc
+   19  /home/tmargaryan/
+   20  cd /home/tmargaryan/
+   21  ls
+   22  ls -all
+   23  man man
+   24  man ls
+   25  man
+   26  man ls
+   27  ls
+   28  cd
+   29  ls
+   30  cat anaconda-ks.cfg
+   31  ls -all
+   32  ls -l
+   33  cat /var/log/messages 
+   34  cat /var/log/messages  | grep kernel
+   35  cat /var/log/messages  | grep kernel > /root/syslog
+   36  ls
+   37  cat syslog
+   38  ls 
+   39  mv syslog kernel_info
+   40  ls
+   41  ls -lrt
+   42  rm kernel_info
+   43  ls -lrt
+   44  rm kernel_info
+   45  ls -lrt
+   46  cat /var/log/messages  | grep kernel > /root/kernel_info
+   47  ls -lrt
+   48  cat kernel_info | less
+   49  history
+   50  yum install httpd
+   51  systemctl start httpd
+   52  systemctl enable httpd
+   53  systemctl status httpd
+   54  cat /var/log/httpd/access_log
+   55   firewall-cmd ––permanent ––add-port=80/tcp
+   56  firewall-cmd ––permanent ––add-port=443/tcp
+   57  firewall-cmd ––reload
+   58   vi /etc/httpd/conf.d/vhost.conf
+   59  cat /var/log/httpd/access_log 
+   60  tail -25 /var/log/httpd/access_log > /root/apache_logs
+   61  history
+   62   cat /var/log/messages  | grep 'kernel'
+   63   cat /var/log/messages  | grep -i 'kernel'
+   64  history
+   65  ls -all
+   66  cat .bash_history 
+   67  man init
+   68  init man
+   69  man init
+   70  pstree
+   71  tree
+   72  yum install tree
+   73  pstree
+   74  yum install pstree
+   75  tree
+   76  pstree
+   77  pgrep
+   78  yum install pgrep
+   79  yum update
+   80  uname -v
+   81  uname -a
+   82  cat /etc/yum.repos.d/
+   83  cat /etc/yum.repos.d/CentOS-Base.repo 
+   84  cat /etc/yum/protected.d/systemd.conf 
+   85  clear
+   86  cat /etc/yum.repos.d/CentOS-Base.repo 
+   87  clear
+   88  cat /etc/yum.repos.d/CentOS-CR.repo 
+   89  cat /etc/yum.repos.d/CentOS-Media.repo 
+   90  clear
+   91  yum search telnet
+   92  yum install telnet.x86_64
+   93  yum search telnet
+   94  yum search ping
+   95  yum search ping |ip
+   96  yum search ping |grep ip
+   97  yum install zip
+   98  ls -all
+   99   mkdir archiem
+  100  date > date
+  101  cat date 
+  102  mv date ./archiem
+  103  ls -lrt
+  104  cd archiem/
+  105  ls
+  106  zip archiem/
+  107  zip date
+  108  zip archiem
+  109  zip -r archiem/
+  110  zip -r archiem
+  111  cd ..
+  112  zip -r archiem
+  113  ls
+  114  zip -r date.zip archiem/
+  115  ls -lrt
+  116  unzip date.zip 
+  117  ls -lrt
+  118  cat date.zip 
+  119  PuTTYPuTTYPuTTY
+  120  rm -r archiem/
+  121  ls -lrt
+  122  rm date.zip 
+  123  ls -lrt
+  124  rm -r date.zip 
+  125  ls -lrt
+  126  rm -r archiem/
+  127  ls -lrt
+  128  rm apache_logs
+  129  rm kernel_info
+  130  top
+  131  htop
+  132  yum install htop
+  133  yum search htop
+  134  clear
+  135  top
+  136  top | grep top
+  137  ps -ef
+  138  ps man
+  139   man ps
+  140  sleep  100&
+  141  pgrep 14884
+  142  ps -ef | grep sleep
+  143  top | grep sleep
+  144  celar
+  145  ps -ef | grep sleep
+  146  ps -ef | grep sleep | grep -v grep
+  147  sleep  100&
+  148  ps -ef | grep sleep | grep -v grep
+  149  systemctl status ssh
+  150  systemctl status sshd
+  151  systemctl --status-all
+  152  systemctl list-units --type=service
+  153  systemctl --type=service
+  154  systemctl status
+  155  clear
+  156  vi /etc/systemd/system/test.service
+  157  clear
+  158  systemctl daemon-reload 
+  159  systemctl stastus test
+  160  systemctl status test
+  161  systemctl start test
+  162  systemctl daemon-reload 
+  163  systemctl start test
+  164  [Unit]
+  165  Description=Welcome service
+  166  [Service]
+  167  Type=oneshot
+  168  RemainAfterExit=yes
+  169  ExecStart=bash -c "/usr/bin/echo hi > /root/service.log"
+  170  ExecStop=bash -c "/usr/bin/echo bye >> /root/service.log"
+  171  [Install]
+  172  WantedBy=multi-user.target
+  173  cat /root/service.log
+  174  systemctl start test
+  175  systemctl start test.service
+  176  systemctl enable test
+  177  systemctl start test
+  178  vi /etc/systemd/system/test.service
+  179  ystemd-analyze verify test
+  180  systemd-analyze verify test
+  181  vi /etc/systemd/system/test.service
+  182  rm /etc/systemd/system/test.service
+  183  ls /etc/systemd/system/test.service
+  184   vi /etc/systemd/system/test1.service
+  185  systemctl daemon-reload 
+  186  systemctl start test1
+  187  cd  /etc/systemd/system/
+  188  ls -all
+  189  rm test1.service -y
+  190  rm test1.service -f
+  191  ls -lrt
+  192  ls -all
+  193  history
+  194  vi /etc/systemd/system/test.service
+  195  systemctl daemon-reload 
+  196  systemctl start test
+  197  vi /etc/systemd/system/test.service
+  198  systemctl enable test
+  199  systemctl start test
+  200  vi /etc/systemd/system/test.service
+  201  cd /etc/systemd/system/
+  202  ls -lrt
+  203  ls multi-user.target.wants/
+  204  cat httpd.service
+  205  vi connection.service
+  206  ls connection.service
+  207  systemctl enable connection.service
+  208   ls multi-user.target.wants/ 
+  209  systemctl start connection.service
+  210  cd 
+  211  systemctl status connection.service
+  212  mkdir /root/scripts
+  213  cd /root/scripts
+  214  vi conup.sh
+  215  ls -all
+  216  chmod +x conup.sh
+  217   systemctl start connection.service
+  218  ls /tmp/
+  219  cat testbootfile
+  220  ls -all
+  221  more conup.sh
+  222  cd
+  223  cd /etc/systemd/system/
+  224  ls -all
+  225  cat test.service
+  226  touch /root/service.log
+  227  chmod +x /root/service.log
+  228  systemctl enable test.service
+  229  systemctl start test.service
+  230  cd
+  231  cd /var/log/audit/?
+  232  cd /var/log/tuned/
+  233  cd /var/log/rhsm/
+  234  rm -f.test.service.swp
+  235  rm -f .test.service.swp
+  236  rm -f test.service
+  237  cd /etc/systemd/system/
+  238  ls -all
+  239  rm test.service
+  240  rm .test.service.swp
+  241  rm connection.service
+  242  ls -all
+  243  yum search zabbix
+  244  yum search all  zabbix
+  245  yum search ftp
+  246  yum install ftp.x86_64
+  247  systemctl status ftp
+  248  systemctl start ftp
+  249  cd /etc/systemd/system/
+  250  ls -all
+  251  cd drwxr-xr-x.  2 root root 4096 Jul 30 10:22 multi-user.target.wants
+  252  cd multi-user.target.wants
+  253  ls -all
+  254  find -name ftp
+  255  find. -name ftp
+  256  find .-name ftp
+  257  systemctl enable ftp
+  258  cd
+  259  ftp localhost
+  260  yum uninstaall ftp.x86_64
+  261  yum uninstall ftp.x86_64
+  262  yum install vsftpd
+  263  systemctl start vsftpd
+  264  systemctl enable vsftpd
+  265  firewall-cmd --zone=public --permanent --add-port=21/tcp
+  266  firewall-cmd --zone=public --permanent --add-service=ftp
+  267  firewall-cmd –-reload
+  268  cp /etc/vsftpd/vsftpd.conf /etc/vsftpd/vsftpd.conf.default
+  269  vi  /etc/vsftpd/vsftpd.conf
+  270  clear
+  271  yum search zabbix
+  272  yum search httpd
+  273  yum search zabbix
+  274  yum search all  zabbix
+  275  yum search all  zabbix client
+  276  yum search all  "zabbix"
+  277  yum search all  "zabb"
+  278  netstat -plntu
+  279  yum cache search zabbix
+  280  man yum
+  281  yum list zabbix
+  282  yum info zabbix
+  283  yum install zabbix
+  284  yum update
+  285  yum search zabbix
+  286  yum search zabbix >> /zabbix-packages.txt
+  287  ls -all
+  288  cd /
+  289  ls -all
+  290  cat zabbix-packages.txt
+  291  zip -r zabbix-packages.txt zabbix_archive
+  292  history
+  293  zip -r zabbix-packages.zip zabbix_archive
+  294  zip -r zabbix-packages.zip zabbix_archive/
+  295  zip -r zabbix-packages.txt.zip /home/tmargaryan/zabbix_archive
+  296  zip -r zabbix-packages.txt.zip . -i /home/tmargaryan/zabbix_archive
+  297  tail -20 history
+  298  tail -20 |  history
+  299  history
+  300   vi /etc/systemd/system/test.service
+  301  ip a
+  302   vi /etc/systemd/system/test.service
+  303  firewall-cmd --state
+  304  firewall-cmd --get-active-zones
+  305  firewall-cmd --zone=public --add-service=ftp
+  306  firewall-cmd --zone=public --permanent --add-service=ftp
+  307  firewall-cmd --list-all
+  308   vi /etc/systemd/system/test.service
+  309   systemctl daemon-reload
+  310   systemctl enable test.service
+  311  systemctl start  test.service
+  312  systemctl status  test.service
+  313  cat /var/log/process.log 
+  314  cp /etc/systemd/system/test.service  /home/tmargaryan/
+  315  cd /home/tmargaryan/
+  316  ls -all
+  317  chown tmargaryan:tmargaryan /etc/systemd/system/test.service 
+  318  ls -all
+  319  cat test.service
+  320  cat /etc/fstab 
+  321  du -sh /etc/fstab 
+  322  du -sh /etc/mtab 
+  323  cat /etc/mtab 
+  324  clear
+  325  htop
+  326  yum install htop
+  327  yum search htop
+  328  top
+  329  yum search htop
+  330  clear
+  331  systemctl status cron
+  332  yum search cron
+  333  yum install PackageKit-cron.x86_64
+  334  systemctl enable cron
+  335  systemctl status cron
+  336  systemctl start cron
+  337  ce /etc/systemd/system
+  338  cd /etc/systemd/system 
+  339  ls -all
+  340  yum install cronie
+  341  crontab -e
+  342  crontab -l
+  343  cat /etc/cron
+  344  cat /etc/cron.d
+  345  crontab -e
+  346  cat /etc/crontab 
+  347  vi /etc/crontab 
+  348  crontab -l
+  349  cat /var/spool/mail/root
+  350  vi /etc/crontab 
+  351  cat /var/spool/mail/root
+  352  crontab -l
+  353  crontab -e
+  354  cat /var/spool/mail/root
+  355  crontab -e
+  356  cat /var/spool/mail/root
+  357  crontab -e
+  358  cd 
+  359  cat /var/spool/mail/root 
+  360  cat /var/log/messages | grep cron
+  361  curl amx.net
+  362  curl google.com
+  363  curl amx.am
+  364  cat /etc/systemd/system/test.service 
+  365  cat /etc/mtab 
+  366  cat /etc/fstab 
+  367  clear
+  368  systemctl status httpd.service 
+  369  yum update httpd
+  370   firewall-cmd --permanent --add-service=http
+  371  firewall-cmd --permanent --add-service=https
+  372  firewall-cmd --reload
+  373  curl http://10.7.16.60
+  374  crontab -l
+  375  crontab -e
+  376  crontab -l
+  377  logrotate --version
+  378  cd /etc/logrotate.d/
+  379  ls -all
+  380  vi apache
+  381  cat /var/log/httpd/access_log 
+  382  cat /var/log/httpd/error_log
+  383  mkdir /mnt/test
+  384  cd
+  385  cd /mnt
+  386  ls -all
+  387  logrotate -f /etc/logrotate.d/apache 
+  388  cd test
+  389  ls -all
+  390  pwd
+  391  unam -a
+  392  unama -a
+  393  uname -a
+  394  ls -all
+  395  vi /etc/logrotate.d/apache 
+  396  logrotate -f /etc/logrotate.d/apache 
+  397  ls -all
+  398  vi /etc/logrotate.d/apache 
+  399  history
+  400  cat /etc/crontab 
+  401  cat /var/spool/mail/root
+  402  crontab -e
+  403  cat /var/spool/cron/?
+  404  cd/var/spool/cron/root
+  405  ls -all
+  406  cat service.log
+  407  cd .config
+  408  ls -all
+  409  cd ~
+  410  cd
+  411  ls -all
+  412  vi mtm-vm.pem
+  413  ls -all
+  414  chmod 600 mtm-vm.pem
+  415  ls -alpl
+  416  ssh centos@18.118.142.166
+  417  ssh -i mtm-vm.pem  centos@18.118.142.166
+  418  ls -all
+  419  cat mtm-vm.pem
+  420  clear
+  421  ssh -i mtm-vm.pem  centos@18.118.142.166
+  422  ls -all
+  423  chmod 755  mtm-vm.pem
+  424  ls -all
+  425  ssh -i mtm-vm.pem  centos@18.118.142.166
+  426  chmod 600  mtm-vm.pem
+  427  ssh -i mtm-vm.pem  centos@18.118.142.166
+  428  rm mtm-vm.pem 
+  429  ls -all
+  430  vi mtm-vm.pem
+  431  ssh -i mtm-vm.pem  centos@18.118.142.166
+  432  chmod 600  mtm-vm.pem
+  433  ssh -i mtm-vm.pem  centos@18.118.142.166
+  434  clear
+  435  ls -all
+  436  ssh -i mtm-vm.pem centos@18.119.106.64
+  437  cat mtm-vm.pem
+  438  clear
+  439  ssh -i mtm-vm.pem centos@18.119.106.64
+  440  ssh -i mtm-vm.pem centos@ec2-18-119-106-64.us-east-2
+  441  ssh -i mtm-vm.pem centos@ec2-18-119-106-64.us-east-2.compute.amazonaws.com
+  442  ssh-keygen -y -f mtm-vm.pem
+  443  ssh -i mtm-vm.pem centos@18.119.106.64
+  444  ssh -i mtm-vm.pem  centos@13.59.154.179
+  445  ssh -i "MTM-VM.pem" centos@ec2-13-59-154-179.us-east-2.compute.amazonaws.com
+  446  ssh -i "MTM-VM.pem" centos@13.59.154.179
+  447  ssh -i "mtm-vm.pem" centos@13.59.154.179
+  448  ls -all
+  449  chmod 400 mtm-vm.pem
+  450  ls -all
+  451  ssh -i mtm-vm.pem centos@13.59.154.179
+  452  ssh -i "mtm-vm.pem" centos@ec2-3-16-207-134.us-east-2.compute.amazonaws.com
+  453  ssh -i mtm-vm.pem centos@3.16.207.134
+  454  ssh-keygen -y -f mtm-vm.pem 
+  455  chmod  600 mtm-vm.pem 
+  456  clear
+  457  ssh -i "mtm-vm.pem" centos@3.16.207.134
+  458  ssh -i mtm-vm.pem centos@3.16.207.134
+  459  ls -la
+  460  ping 3.16.207.134
+  461  ssh -i mtm-vm.pem centos@3.16.207.134
+  462  ping ya.ru
+  463  ping 3.144.83.231
+  464  ssh -i mtm-vm.pem centos@3.144.83.231
+  465  sudo chmod mtm-vm.pem 600
+  466  chmod 600 mtm-vm.pem
+  467  ssh -i mtm-vm.pem centos@3.144.83.231
+  468  ls -la
+  469  ssh -i mtm-vm.pem centos@3.144.83.231
+  470  cd /home/tmargaryan/
+  471  ls
+  472  mv new.pem ~
+  473  cd
+  474  ls -all
+  475  chmod 600 new.pem 
+  476  ls -la
+  477  ssh -i new.pem centos@3.144.83.231
+  478  cp new.pem /home/tmargaryan/
+  479  exit
+  480  history
+  481  ls -all
+  482  rm mtm-vm.pem
+  483  ls -all
+  484  rm new.pem
+  485  ls -all
+  486  mv /home/tmargaryan/tik-vm.pem  ~
+  487  ls -all
+  488  chmod 600 tik-vm.pem
+  489  clear
+  490  ssh -i tik-vm.pem ubuntu@18.219.224.61
+  491  git -v
+  492  yum search git
+  493  yum install git.x86_64
+  494  git -v
+  495  git --version
+  496  yum update git
+  497  systemctl status git
+  498  systemctl status git.service
+  499  systemctl enable git
+  500  yum search git
+  501  mkdir ~/test-git/repo
+  502  git init
+  503  mkdir /test-git/repo
+  504  mkdir /test-git
+  505  cd /test-git/
+  506  mkdir /repo
+  507  cd /repo/
+  508  git init
+  509  git status
+  510  git pull
+  511  git clone https://github.com/arkocharyan/bdg-test.git
+  512  git pull
+  513  cd
+  514  ls
+  515  ls -all
+  516  git clone https://github.com/arkocharyan/bdg-test.git
+  517  ls -all
+  518  cd bdg-test
+  519  ls -all
+  520  cat file1
+  521  chmod +x file1
+  522  ls -all
+  523  git pull
+  524  ls -all
+  525  cat .git
+  526  cd .git
+  527  ls -all
+  528  cd ../
+  529  ls -all
+  530  ls -la
+  531  git pull
+  532  ls -all
+  533  git pull
+  534  ls -all
+  535  git diff
+  536  ls -all
+  537  git pull
+  538  ls -all
+  539  git pull
+  540  git push
+  541  ls -all
+  542  git push
+  543  git add .
+  544  git commit -m "asdasd"
+  545  ls -all
+  546  git pull
+  547  touch tikmarg
+  548  git add .
+  549  git commit -m "test commit"
+  550  git push
+  551  clone https://github.com/tikmarg/testirovka.git
+  552  git
+  553  git clone https://github.com/tikmarg/testirovka.git
+  554  git
+  555  git clone https://github.com/tikmarg/testirovka.git
+  556  git branch new_branch
+  557  git branch
+  558  git branch main
+  559  git branch master
+  560  git branch -M Main
+  561  git branch
+  562  ls -all
+  563  cd testirovka
+  564  git branch
+  565  git branch -M Main
+  566  git branch -M Master
+  567  git push -u origin main
+  568  vi test1
+  569  git push -u origin main
+  570  git add .
+  571  git commit -m  "adasdasd"
+  572  git push -u origin main
+  573  gitlog
+  574  git log
+  575  git -d
+  576  ls -all
+  577  git push
+  578  ls -all
+  579  git branch -M main
+  580  git push
+  581  cd ../
+  582  ls 
+  583  ls -all
+  584  cd testirovka
+  585  ls -all
+  586  vi tes2
+  587  git add .
+  588  git commit -m "test2"
+  589   git config --global user.email "tiko.margaryan@mail.ru"
+  590  git commit -m "test2"
+  591  git push 
+  592  git branch
+  593  git push -u master
+  594  git push -u origin  master
+  595  git branch new_branch
+  596  ls -all
+  597  gitchekout new_branch
+  598  git chekout new_branch
+  599  git push -u origin new_branch
+  600  git branch
+  601  vi test4
+  602  git add .
+  603  git commit -m "asd"
+  604  git push 
+  605  ls -la
+  606  git branch 
+  607  git checkout new_branch 
+  608  nano tigrantest
+  609  git add .
+  610  git commit -m "Tigran test"
+  611  git push
+  612  ls -la
+  613  cd ../
+  614  ls -la
+  615  git clone https://github.com/arkocharyan/bdg-branch
+  616  cd bdg-branch/
+  617  git branch 
+  618  git branch tikmargaryan
+  619  git branch 
+  620  git checkout tikmargaryan 
+  621  nano TigranMargaryan
+  622  git add .
+  623  git commite -m "TigranMargaryan"
+  624  git commit -m "TigranMargaryan"
+  625  git push
+  626  git config --global push.default simple
+  627  git push
+  628   git push --set-upstream origin tikmargaryan
+  629  git clone https://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@github.com/arkocharyan/test.git
+  630  cd 
+  631  git clone https://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@github.com/arkocharyan/test.git
+  632  ls -all
+  633  vi /etc/pam.d/common-password
+  634  cd /etc/pam.d
+  635  ls -all
+  636  ls /common-password
+  637  ls common-password
+  638  grep "^minlen" /etc/security/pwquality.conf
+  639  cat  /etc/security/pwquality.conf
+  640  authconfig --passminlen=8 --update
+  641  grep "^minlen" /etc/security/pwquality.conf
+  642  vi /etc/pam.d/system-auth
+  643  authconfig --enablereqlower --update
+  644  grep "^lcredit" /etc/security/pwquality.conf
+  645  authconfig --enablerequpper --update
+  646  grep "^ucredit" /etc/security/pwquality.conf
+  647  vi /etc/login.defs
+  648  chage -l sk
+  649  chage -l tmargaryan
+  650  chage -E 17/08/2021 -m 5 -M 180 -I 10 -W 10 tmargaryan
+  651  chage -l tmargaryan
+  652  vi /etc/pam.d/system-auth
+  653  date |md5sum 
+  654  chage -E 17/08/2021 -m 5 -M 180 -I 1 -W 10 jaghamyan
+  655  ssh webmaster@10.1.18.242 -p 33
+  656  ping 10.1.18.242
+  657  ping git.amx.net
+  658  ssh root@git.amx.net
+  659  ssh root@10.7.21.5
+  660  clone https://github.com/tikmarg/lessondep.git
+  661  history
+  662  git clone https://github.com/tikmarg/lessondep.git
+  663  ls -all
+  664  rm -r testirovka
+  665  cd lessondep/
+  666  ls
+  667  vi Tigran_Margaryan
+  668  git add .
+  669  git commit -m "Tigran_Margaryan"
+  670  git push
+  671   https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/
+  672  git push
+  673  ls -all
+  674  git config --global push.default simple
+  675  git push --set-upstream origin Tigran_Margaryan
+  676  git push -u origin Tigran.Margaryan
+  677  git clone https://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/github.com/tikmarg/lessondep.git
+  678  git push --set-upstream origin Tigran_Margaryan
+  679  git push
+  680  git branch lesson
+  681  git checkout lesson
+  682  ls -all
+  683  history > history1
